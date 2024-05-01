@@ -44,7 +44,6 @@ void setup()
   // pinMode(2, INPUT_PULLUP);
   // pinMode(3, INPUT_PULLUP);
  // pinMode(22,INPUT);
-  Serial.begin(9600);
 }
 
 // void val(){
@@ -64,21 +63,13 @@ void loop()
   // val();
   // motor();
   digitalWrite(dirPin, HIGH);
-  motor();
-  motor();
-  motor();
-  motor();
-  motor();
-  motor();
-  delay(500);
-  digitalWrite(dirPin, LOW);
-  motor();
-  motor();
-  motor();
-  motor();
-  motor();
-  motor();
-  delay(500);
+  for(int x = 0; x < stepsPerRevolution; x++)
+    {
+      digitalWrite(stepPin, HIGH);
+      delayMicroseconds(d);
+      digitalWrite(stepPin, LOW);
+      delayMicroseconds(d);
+    }
 
 	// Set motor direction clockwise
 	

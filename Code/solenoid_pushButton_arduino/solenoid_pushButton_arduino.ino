@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(!digitalRead(3)){
+  if(digitalRead(3)){
     digitalWrite(2,HIGH);
   }
   else{
